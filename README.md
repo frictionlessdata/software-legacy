@@ -155,6 +155,7 @@ As milestones we use concrete achievements e.g. from our roadmap. It could be to
 ## Labels
 
 Aside internal waffle labels and helpers labels like “question” etc we use core color-coded labels based on SemVer. The main point of processing issues from Inbox to Backlog is to add one of this labels because we need to plan releases, breaking announces etc:
+
 ![labels](https://cloud.githubusercontent.com/assets/557395/17673693/f6391676-632a-11e6-9971-945623b68e16.png)
 ## Assignments
 
