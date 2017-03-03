@@ -24,7 +24,9 @@ Inspector(checks='all',
           row_limit=1000, 
           error_limit=1000,
           order_fields=False,
-          infer_fields=False)
+          infer_fields=False,
+          custom_presets=[],
+          custom_checks=[])
     inspect(source, preset='table', **options)
 ~@check(code, type, context, before/after)
 ~@preset(name)
