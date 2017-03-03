@@ -13,7 +13,9 @@ General documentation container and issue tracker for the Frictionless Data stac
 - keyed row - dictionary of column values
 - extended row - array containing row number, headers and row
 - descriptor - dictionary describing something
+
 ## Interface
+
 ### goodtables
 
 ```
