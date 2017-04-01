@@ -57,7 +57,7 @@ validate(descriptor, profile='base', remote_profiles=False) -> raise/True
 exceptions
 ~cli
 ```
-### jsontableschema
+### tableschema
 
 ```
 Table(source, schema=None, post_cast=None, backend=None, **options)
@@ -83,8 +83,8 @@ Field(descriptor)
     format -> str
     required -> bool
     constraints -> dict
-    cast_value(value, skip_constraints=False) -> value
-    test_value(value, skip_constraints=False, constraint=None) -> bool
+    cast_value(value, constraints=True) -> value
+    test_value(value, constraints=True) -> bool
 infer(headers, values) -> descriptor
 validate(descriptor) -> raise/True
 exceptions
