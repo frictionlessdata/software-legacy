@@ -1,11 +1,14 @@
 # Frictionless Data Stack
+ 
 General documentation container and issue tracker for the Frictionless Data stack.
 
-# Stack Reference [draft]
-## Architecture
+## Stack Reference
+
+### Architecture
 
 ![frictonless data 1](https://cloud.githubusercontent.com/assets/557395/17673886/d368f642-632b-11e6-9b59-3021952f09ca.png)
-## Language
+
+### Language
 - row number - row number starting from 1
 - col number - column number starting from 1
 - headers - array of column names
@@ -14,11 +17,21 @@ General documentation container and issue tracker for the Frictionless Data stac
 - extended row - array containing row number, headers and row
 - descriptor - dictionary describing something
 
-## Interface
+### Implementation
 
-### goodtables
+There are two level of implementations:
+  - `basic`
+  - `extended`
+
+Python libraries are intended to be on `extended` level of implementation when all other languages should fosuc on `basic` implementation level (it includes `datapackage` and `tableschema` without API marked as `extended`).
+
+### Interface
+
+#### goodtables
 
 ```
+[extended implementation]
+---
 Inspector(checks='all', 
           table_limit=10,
           row_limit=1000, 
@@ -34,63 +47,92 @@ exceptions
 spec
 ~cli
 ```
-### datapackage
+
+#### datapackage
 
 ```
-Datapackage(descriptor, profile='base', base_path=None, remote_profiles=False, raise_invalid=True)
+[basic implementation]
+---
+DataPackage(descriptor, base_path=None, strict=True)
     valid -> dict
     errors -> list
-    profile -> str
+    profile -> Profile
     descriptor -> dict
     resources -> Resource[]
-    update(descriptor)
-    addResource(descriptor)
-    removeResource(index)
-    save(target)
-Resource(descriptor, profile='base', base_path=None)
-    type -> local/remote/inline
-    source -> path/data
-    profile -> str
+    resource_names -> str[]
+    add_resource(descriptor) -> Resource/None
+    remove_resource(name) -> Resource/None
+    get_resource(name) -> Resource/None
+    save(target) -> bool
+    update() -> bool
+Resource(descriptor, base_path=None)
+    name -> str
+    tabular -> bool
     descriptor -> dict
-    table -> jsontableschema.Table/None
-validate(descriptor, profile='base', remote_profiles=False) -> raise/True
+    source_type -> inline/{local|remote}/multipart-{local|remote}
+    source -> data/path[0]/path
+    table -> None/jsontableschema.Table
+Profile(profile)
+    name -> str
+    jsonschema -> dict
+    validate(descriptor) -> raise/True    
+validate(descriptor) -> raise/True
 exceptions
 ~cli
+---
+[extended implementation]
+---
+DataPackage(descriptor, base_path=None, strict=True, storage=None, **storage_options)
+    save(target, storage=None, **storage_options)
+Resource(descriptor, base_path=None)
+    config(**table_options)
 ```
-### tableschema
+
+#### tableschema
 
 ```
-Table(source, schema=None, post_cast=None, backend=None, **options)
-    stream -> tabulator.Stream
+[basic implementation]
+---
+Table(source, schema=None)
     schema -> Schema
-    iter(keyed/extended=False) -> (generator) (keyed/extended)row[]
-    read(keyed/extended=False, limit=None) -> (keyed/extended)row[]
-    save(target, backend=None, **options)
-Schema(descriptor)
-    descriptor -> dict
-    fields -> Field[]
     headers -> str[]
+    iter(keyed/extended=False, cast=True) -> (generator) (keyed/extended)row[]
+    read(keyed/extended=False, cast=True, limit=None) -> (keyed/extended)row[]
+    save(target) -> bool
+Schema(descriptor, strict=True)
+    valid -> dict
+    errors -> list
+    descriptor -> dict
     primary_key -> str[]
     foreign_keys -> str[]
-    get_field(name) -> Field
-    has_field(name) -> bool
+    fields -> Field[]
+    field_names -> str[]
+    add_field(descriptor) -> Field/None
+    remove_field(name) -> Field/None
+    get_field(name) -> Field/None
     cast_row(row) -> row
-    save(target)
-Field(descriptor)
-    descriptor -> dict
+    save(target) -> bool
+    update() -> bool
+Field(descriptor, missing_values=[''])
     name -> str
     type -> str
     format -> str
     required -> bool
     constraints -> dict
+    descriptor -> dict
     cast_value(value, constraints=True) -> value
     test_value(value, constraints=True) -> bool
-infer(headers, values) -> descriptor
+infer(source, {headers}) -> descriptor
 validate(descriptor) -> raise/True
 exceptions
 ~cli
 ---
-Storage(**options)
+[extended implementation]
+---
+Table(source, schema=None, post_cast=None, storage=None, **stream/storage_options)
+    stream -> tabulator.Stream
+    save(target, storage=None, **storage_options)
+Storage(**options) 
     buckets -> str[]
     create(bucket, descriptor, force=False)
     delete(bucket=None, ignore=False)
@@ -100,9 +142,12 @@ Storage(**options)
     write(bucket, rows)
 plugins
 ```
-### tabulator
+
+#### tabulator
 
 ```
+[extended implementation]
+---
 Stream(source, 
        headers=None,
        scheme=None, 
@@ -112,31 +157,29 @@ Stream(source,
        post_parse=None,
        **options)
     closed/open/close/reset
-    headers -> list
     sample -> rows
+    headers -> list
     iter(keyed/extended=False) -> (generator) (keyed/extended)row[]
     read(keyed/extended=False, limit=None) -> (keyed/extended)row[]
-    save(target, format=None, encoding=None, **options)
-    ::test(source, scheme=None, format=None)
+    save(target, format=None, encoding=None, **options) 
+validate(source, scheme=None, format=None) -> raise/True
 exceptions
 ~cli
 ```
-## References
-- [RFC: Rows naming in tabular data representation](https://github.com/frictionlessdata/project/issues/284)
 
-# Development Process [draft]
+## Development Process
 
 This document proposes a process to work on the technical side of the Frictionless Data project. The goal - have things manageable for a minimal price.
 
-## Project
+### Project
 
 The specific of the project is a huge amount of components and actors (repositories, issues, contributors etc). The process should be effective in handling this specific. 
 
-## Process
+### Process
 
 The main idea to focus on getting things done and reduce the price of maintaining the process instead of trying to fully mimic some popular methodologies. We use different ideas from different methodologies.
 
-## Roles
+### Roles
 - Product Owner (PO)
 - Product Manager (PM)
 - Developer Advocate (DA)
@@ -144,7 +187,7 @@ The main idea to focus on getting things done and reduce the price of maintainin
 - Senior Developer (SD)
 - Junior Developer (JD)
 
-## Board
+### Board
 
 We use a kanban board located at https://waffle.io/frictionlessdata/project to work on the project. The board has following columns (ordered by issue stage):
 - Backlog - unprocessed issues without labels and processed issues with labels
@@ -153,51 +196,51 @@ We use a kanban board located at https://waffle.io/frictionlessdata/project to w
 - Review - issues under review process
 - Done - completed issues
 
-## Workflow
+### Workflow
 
 The work on the project is a live process splitted into 2 weeks iterations between iteration plannings (including retrospection):
 - Inside an iteration assigned persons work on their current issues and subset of roles do issues processing and prioritizing
 - During the iteration planning the team moves issues from the Priority column to the Current column and assign persons. Instead of issue estimations assigned person approves amount of work for the current iteration as a high-level estimation.
 
-## Milestones
+### Milestones
 
 As milestones we use concrete achievements e.g. from our roadmap. It could be tools or spec versions like “spec-v1”. We don’t use the workflow related milestones like “current” of “backlog” managing it via the board labeling system.   
 
-## Labels
+### Labels
 
 Aside internal waffle labels and helpers labels like “question” etc we use core color-coded labels based on SemVer. The main point of processing issues from Inbox to Backlog is to add one of this labels because we need to plan releases, breaking announces etc:
 
 ![labels](https://cloud.githubusercontent.com/assets/557395/17673693/f6391676-632a-11e6-9971-945623b68e16.png)
 
-## Assignments
+### Assignments
 
 Every issue in the Current column should be assigned to some person with meaning “this person should do some work on this issue to unblock it”. Assigned person should re-assign an issue for a current blocker. It provides a good real-time overview of the project. 
 
-## Analysis
+### Analysis
 
 After planning it’s highly recommended for an assigned person to write a short plan of how to solve the issue (could be a list of steps) and ask someone to check. This work could be done on some previous stages by subset of roles.
 
-## Branching
+### Branching
 
 We use Git Flow with some simplifications (see OKI coding standards). Master branch should always be “green” on tests and new features/fixes should go from pull requests. Direct committing to master could be allowed by subset of roles in some cases.
 
-## Pull Requests
+### Pull Requests
 
 A pull request should be visually merged on the board to the corresponding issue using “It fixes #issue-number” sentence in the pull request description (initial comment). If there is no corresponding issue for the pull request it should be handled as an issue with labeling etc.
 
-## Reviews
+### Reviews
 
 After sending a pull request the author should assign the pull request to another person “asking” for a code review. After the review code should be merged to the codebase by the pull request author (or person having enough rights). 
 
-## Documentation
+### Documentation
 
 By default documentation for a tool should be written in README.md not using additional files and folders. It should be clean and well-structured. API should be documented in the code as docstrings. We compile project level docs automatically.
 
-## Testings
+### Testings
 
 Tests should be written using OKI coding standards. Start write tests from top (match high-level requirements) to bottom (if needed). The most high-level tests are implemented as testsuites on project level (integration tests between different tools).
 
-## Releasing
+### Releasing
 
 We use SemVer for versioning and Travis for testing and releasing/deployments. We prefer short release cycle (features and fixes could be released immediately). Releases should be configured using tags based on package examples workflow provided by OKI.
 
