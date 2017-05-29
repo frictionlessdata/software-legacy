@@ -1,8 +1,8 @@
-# Frictionless Data Stack
+# Frictionless Data Implementations
  
 General documentation container and issue tracker for the Frictionless Data stack.
 
-## Stack Reference
+## Implementation Reference
 
 ### Architecture
 
