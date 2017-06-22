@@ -40,7 +40,7 @@ Inspector(checks='all',
           infer_fields=False,
           custom_presets=[],
           custom_checks=[])
-    inspect(source, preset='table', **options)
+    inspect(source, preset='table', **options) -> {valid, ...}
 ~@check(code, type, context, before/after)
 ~@preset(name)
 exceptions
@@ -75,8 +75,8 @@ Resource(descriptor, base_path=None)
 Profile(profile)
     name -> str
     jsonschema -> dict
-    validate(descriptor) -> raise/True    
-validate(descriptor) -> raise/True
+    validate(descriptor) -> {valid, errors}    
+validate(descriptor) -> {valid, errors}
 exceptions
 ~cli
 ---
@@ -123,7 +123,7 @@ Field(descriptor, missing_values=[''])
     cast_value(value, constraints=True) -> value
     test_value(value, constraints=True) -> bool
 infer(source, {headers}) -> descriptor
-validate(descriptor) -> raise/True
+validate(descriptor) -> {valid, errors}
 exceptions
 ~cli
 ---
@@ -162,7 +162,7 @@ Stream(source,
     iter(keyed/extended=False) -> (generator) (keyed/extended)row[]
     read(keyed/extended=False, limit=None) -> (keyed/extended)row[]
     save(target, format=None, encoding=None, **options) 
-validate(source, scheme=None, format=None) -> raise/True
+validate(source, scheme=None, format=None) -> {valid, errors}
 exceptions
 ~cli
 ```
