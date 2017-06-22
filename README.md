@@ -27,20 +27,24 @@ Python libraries are intended to be on `extended` level of implementation when a
 
 ### Interface
 
+This interface is described on pseodo declarative language to provide general functional requirements and naming conventions for implementations. This language based on Python idioms. Implementations for other languages should follow they own language idioms (e.g. exception handling, asynchronous functions etc). 
+
 #### goodtables
 
 ```
 [extended implementation]
 ---
-Inspector(checks='all', 
-          table_limit=10,
-          row_limit=1000, 
-          error_limit=1000,
-          order_fields=False,
-          infer_fields=False,
-          custom_presets=[],
-          custom_checks=[])
-    inspect(source, preset='table', **options) -> {valid, ...}
+validate(source,
+         preset='table',
+         checks='all', 
+         table_limit=10,
+         row_limit=1000, 
+         error_limit=1000,
+         order_fields=False,
+         infer_fields=False,
+         custom_presets=[],
+         custom_checks=[],
+         **source_options) -> report
 ~@check(code, type, context, before/after)
 ~@preset(name)
 exceptions
@@ -75,8 +79,8 @@ Resource(descriptor, base_path=None)
 Profile(profile)
     name -> str
     jsonschema -> dict
-    validate(descriptor) -> {valid, errors}    
-validate(descriptor) -> {valid, errors}
+    validate(descriptor) -> True/raise    
+validate(descriptor) -> True/raise
 exceptions
 ~cli
 ---
@@ -123,7 +127,7 @@ Field(descriptor, missing_values=[''])
     cast_value(value, constraints=True) -> value
     test_value(value, constraints=True) -> bool
 infer(source, {headers}) -> descriptor
-validate(descriptor) -> {valid, errors}
+validate(descriptor) -> True/raise
 exceptions
 ~cli
 ---
@@ -162,7 +166,7 @@ Stream(source,
     iter(keyed/extended=False) -> (generator) (keyed/extended)row[]
     read(keyed/extended=False, limit=None) -> (keyed/extended)row[]
     save(target, format=None, encoding=None, **options) 
-validate(source, scheme=None, format=None) -> {valid, errors}
+validate(source, scheme=None, format=None) -> True/raise
 exceptions
 ~cli
 ```
