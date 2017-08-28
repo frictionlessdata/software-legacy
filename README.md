@@ -82,9 +82,9 @@ Resource(descriptor, base_path=None, strict=False)
     multipart -> bool
     tabular -> bool
     source -> data/path
-    table -> None/tableschema.Table
     iter() -> bytes[]
     read() -> bytes
+    table -> None/tableschema.Table
     infer() -> descriptor
     commit(strict=None) -> bool
     save(target) -> bool
