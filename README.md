@@ -44,8 +44,8 @@ validate(source,
          infer_fields=False,
          custom_presets=[],
          custom_checks=[],
-         **source_options) -> report
-~@check(code, type, context, before/after)
+         **options) -> report
+~@check(code, type, context, position)
 ~@preset(name)
 exceptions
 spec
@@ -57,39 +57,52 @@ spec
 ```
 [basic implementation]
 ---
-DataPackage(descriptor, base_path=None, strict=True)
+Package(descriptor, base_path=None, strict=False)
     valid -> dict
     errors -> list
     profile -> Profile
     descriptor -> dict
     resources -> Resource[]
     resource_names -> str[]
+    get_resource(name) -> Resource/None
     add_resource(descriptor) -> Resource/None
     remove_resource(name) -> Resource/None
-    get_resource(name) -> Resource/None
+    infer(pattern=False) -> descriptor
+    commit(strict=None) -> bool
     save(target) -> bool
-    update() -> bool
-Resource(descriptor, base_path=None)
-    name -> str
-    tabular -> bool
+Resource(descriptor, base_path=None, strict=False)
+    valid -> dict
+    errors -> list
+    profile -> Profile
     descriptor -> dict
-    source_type -> inline/{local|remote}/multipart-{local|remote}
-    source -> data/path[0]/path
-    table -> None/jsontableschema.Table
+    name -> str
+    inline -> bool
+    local -> bool
+    remote -> bool
+    multipart -> bool
+    tabular -> bool
+    source -> data/path
+    table -> None/tableschema.Table
+    iter() -> bytes[]
+    read() -> bytes
+    infer() -> descriptor
+    commit(strict=None) -> bool
+    save(target) -> bool
 Profile(profile)
     name -> str
     jsonschema -> dict
-    validate(descriptor) -> True/raise    
+    validate(descriptor) -> True/raise   
 validate(descriptor) -> True/raise
+infer(pattern, basePath) -> descriptor
 exceptions
-~cli
 ---
 [extended implementation]
 ---
-DataPackage(descriptor, base_path=None, strict=True, storage=None, **storage_options)
-    save(target, storage=None, **storage_options)
+DataPackage(descriptor, base_path=None, strict=True, storage=None, **options)
+    save(target, storage=None, **options)
 Resource(descriptor, base_path=None)
-    config(**table_options)
+    config(**options)
+~cli
 ```
 
 #### tableschema
@@ -97,26 +110,28 @@ Resource(descriptor, base_path=None)
 ```
 [basic implementation]
 ---
-Table(source, schema=None)
-    schema -> Schema
+Table(source, schema=None, strict=False, **options)
     headers -> str[]
-    iter(keyed/extended=False, cast=True) -> (generator) (keyed/extended)row[]
-    read(keyed/extended=False, cast=True, limit=None) -> (keyed/extended)row[]
+    schema -> Schema
+    iter(keyed/extended=False, cast=True, check=True) -> (generator) (keyed/extended)row[]
+    read(keyed/extended=False, cast=True, check=True, limit=None) -> (keyed/extended)row[]
+    infer(limit=100) -> descriptor
     save(target) -> bool
-Schema(descriptor, strict=True)
-    valid -> dict
+Schema(descriptor, strict=False)
+    valid -> bool
     errors -> list
     descriptor -> dict
     primary_key -> str[]
     foreign_keys -> str[]
     fields -> Field[]
     field_names -> str[]
+    get_field(name) -> Field/None
     add_field(descriptor) -> Field/None
     remove_field(name) -> Field/None
-    get_field(name) -> Field/None
     cast_row(row) -> row
+    infer(rows, headers=1) -> descriptor
+    commit(strict=None) -> bool
     save(target) -> bool
-    update() -> bool
 Field(descriptor, missing_values=[''])
     name -> str
     type -> str
@@ -126,16 +141,14 @@ Field(descriptor, missing_values=[''])
     descriptor -> dict
     cast_value(value, constraints=True) -> value
     test_value(value, constraints=True) -> bool
-infer(source, {headers}) -> descriptor
 validate(descriptor) -> True/raise
+infer(source, **options) -> descriptor
 exceptions
-~cli
 ---
 [extended implementation]
 ---
-Table(source, schema=None, post_cast=None, storage=None, **stream/storage_options)
-    stream -> tabulator.Stream
-    save(target, storage=None, **storage_options)
+Table(source, schema=None, post_cast=None, storage=None, **options)
+    save(target, storage=None, **options)
 Storage(**options) 
     buckets -> str[]
     create(bucket, descriptor, force=False)
@@ -145,6 +158,7 @@ Storage(**options)
     read(bucket) -> row[]
     write(bucket, rows)
 plugins
+~cli
 ```
 
 #### tabulator
