@@ -82,9 +82,12 @@ Resource(descriptor, base_path=None, strict=False)
     multipart -> bool
     tabular -> bool
     source -> data/path
-    table -> None/tableschema.Table
-    iter() -> bytes[]
-    read() -> bytes
+    headers -> str[]
+    schema -> tableschema.Schema    
+    iter(keyed/extended=False, cast=True, check=True) -> (generator) (keyed/extended)row[]
+    read(keyed/extended=False, cast=True, check=True, limit=None) -> (keyed/extended)row[]
+    raw_iter() -> bytes[]
+    raw_read() -> bytes
     infer() -> descriptor
     commit(strict=None) -> bool
     save(target) -> bool
