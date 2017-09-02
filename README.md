@@ -84,8 +84,9 @@ Resource(descriptor, base_path=None, strict=False)
     source -> data/path
     headers -> str[]
     schema -> tableschema.Schema    
-    iter(keyed/extended=False, cast=True, check=True) -> (generator) (keyed/extended)row[]
-    read(keyed/extended=False, cast=True, check=True, limit=None) -> (keyed/extended)row[]
+    iter(keyed/extended=False, cast=True, relations=False) -> (generator) (keyed/extended)row[]
+    read(keyed/extended=False, cast=True, relations=False, limit=None) -> (keyed/extended)row[]
+    check_relations() -> True/raise
     raw_iter() -> bytes[]
     raw_read() -> bytes
     infer() -> descriptor
@@ -116,8 +117,8 @@ Resource(descriptor, base_path=None)
 Table(source, schema=None, strict=False, **options)
     headers -> str[]
     schema -> Schema
-    iter(keyed/extended=False, cast=True, check=True) -> (generator) (keyed/extended)row[]
-    read(keyed/extended=False, cast=True, check=True, limit=None) -> (keyed/extended)row[]
+    iter(keyed/extended=False, cast=True, relations=False) -> (generator) (keyed/extended)row[]
+    read(keyed/extended=False, cast=True, relations=False, limit=None) -> (keyed/extended)row[]
     infer(limit=100) -> descriptor
     save(target) -> bool
 Schema(descriptor, strict=False)
