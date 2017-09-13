@@ -1,12 +1,12 @@
 # Frictionless Data Implementations
- 
+
 General documentation container and issue tracker for the Frictionless Data stack.
 
 ## Implementation Reference
 
 ### Architecture
 
-![frictonless data 1](https://cloud.githubusercontent.com/assets/557395/17673886/d368f642-632b-11e6-9b59-3021952f09ca.png)
+![Architecture](https://i.imgur.com/tILRP84.png)
 
 ### Language
 - row number - row number starting from 1
@@ -27,7 +27,7 @@ Python libraries are intended to be on `extended` level of implementation when a
 
 ### Interface
 
-This interface is described on pseodo declarative language to provide general functional requirements and naming conventions for implementations. This language based on Python idioms. Implementations for other languages should follow they own language idioms (e.g. exception handling, asynchronous functions etc). 
+This interface is described on pseodo declarative language to provide general functional requirements and naming conventions for implementations. This language based on Python idioms. Implementations for other languages should follow they own language idioms (e.g. exception handling, asynchronous functions etc).
 
 #### goodtables
 
@@ -36,9 +36,9 @@ This interface is described on pseodo declarative language to provide general fu
 ---
 validate(source,
          preset='table',
-         checks='all', 
+         checks='all',
          table_limit=10,
-         row_limit=1000, 
+         row_limit=1000,
          error_limit=1000,
          order_fields=False,
          infer_fields=False,
@@ -83,7 +83,7 @@ Resource(descriptor, base_path=None, strict=False)
     tabular -> bool
     source -> data/path
     headers -> str[]
-    schema -> tableschema.Schema    
+    schema -> tableschema.Schema
     iter(keyed/extended=False, cast=True, relations=False) -> (generator) (keyed/extended)row[]
     read(keyed/extended=False, cast=True, relations=False, limit=None) -> (keyed/extended)row[]
     check_relations() -> True/raise
@@ -95,7 +95,7 @@ Resource(descriptor, base_path=None, strict=False)
 Profile(profile)
     name -> str
     jsonschema -> dict
-    validate(descriptor) -> True/raise   
+    validate(descriptor) -> True/raise
 validate(descriptor) -> True/raise
 infer(pattern, basePath) -> descriptor
 exceptions
@@ -153,7 +153,7 @@ exceptions
 ---
 Table(source, schema=None, post_cast=None, storage=None, **options)
     save(target, storage=None, **options)
-Storage(**options) 
+Storage(**options)
     buckets -> str[]
     create(bucket, descriptor, force=False)
     delete(bucket=None, ignore=False)
@@ -170,11 +170,11 @@ plugins
 ```
 [extended implementation]
 ---
-Stream(source, 
+Stream(source,
        headers=None,
-       scheme=None, 
-       format=None,  
-       encoding=None, 
+       scheme=None,
+       format=None,
+       encoding=None,
        sample_size=None,
        post_parse=None,
        **options)
@@ -183,7 +183,7 @@ Stream(source,
     headers -> list
     iter(keyed/extended=False) -> (generator) (keyed/extended)row[]
     read(keyed/extended=False, limit=None) -> (keyed/extended)row[]
-    save(target, format=None, encoding=None, **options) 
+    save(target, format=None, encoding=None, **options)
 validate(source, scheme=None, format=None) -> True/raise
 exceptions
 ~cli
@@ -195,7 +195,7 @@ This document proposes a process to work on the technical side of the Frictionle
 
 ### Project
 
-The specific of the project is a huge amount of components and actors (repositories, issues, contributors etc). The process should be effective in handling this specific. 
+The specific of the project is a huge amount of components and actors (repositories, issues, contributors etc). The process should be effective in handling this specific.
 
 ### Process
 
@@ -213,7 +213,7 @@ The main idea to focus on getting things done and reduce the price of maintainin
 
 We use a kanban board located at https://waffle.io/frictionlessdata/project to work on the project. The board has following columns (ordered by issue stage):
 - Backlog - unprocessed issues without labels and processed issues with labels
-- Priority - prioritized issues planned for the next iterations (estimated and assigned)  
+- Priority - prioritized issues planned for the next iterations (estimated and assigned)
 - Current - current iteration issues promoted on iteration planning (estimated and assigned)
 - Review - issues under review process
 - Done - completed issues
@@ -226,7 +226,7 @@ The work on the project is a live process splitted into 2 weeks iterations betwe
 
 ### Milestones
 
-As milestones we use concrete achievements e.g. from our roadmap. It could be tools or spec versions like “spec-v1”. We don’t use the workflow related milestones like “current” of “backlog” managing it via the board labeling system.   
+As milestones we use concrete achievements e.g. from our roadmap. It could be tools or spec versions like “spec-v1”. We don’t use the workflow related milestones like “current” of “backlog” managing it via the board labeling system.
 
 ### Labels
 
@@ -236,7 +236,7 @@ Aside internal waffle labels and helpers labels like “question” etc we use c
 
 ### Assignments
 
-Every issue in the Current column should be assigned to some person with meaning “this person should do some work on this issue to unblock it”. Assigned person should re-assign an issue for a current blocker. It provides a good real-time overview of the project. 
+Every issue in the Current column should be assigned to some person with meaning “this person should do some work on this issue to unblock it”. Assigned person should re-assign an issue for a current blocker. It provides a good real-time overview of the project.
 
 ### Analysis
 
@@ -252,7 +252,7 @@ A pull request should be visually merged on the board to the corresponding issue
 
 ### Reviews
 
-After sending a pull request the author should assign the pull request to another person “asking” for a code review. After the review code should be merged to the codebase by the pull request author (or person having enough rights). 
+After sending a pull request the author should assign the pull request to another person “asking” for a code review. After the review code should be merged to the codebase by the pull request author (or person having enough rights).
 
 ### Documentation
 
