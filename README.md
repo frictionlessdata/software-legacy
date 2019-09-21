@@ -1,5 +1,7 @@
 # Frictionless Data Implementations
 
+[![Travis](https://travis-ci.org/frictionlessdata/implementations.svg?branch=master)](https://travis-ci.org/frictionlessdata/implementations)
+
 General documentation container and issue tracker for the Frictionless Data stack.
 
 ## Contents
