@@ -1,11 +1,11 @@
 # Status
 
-## General
+[![Python (basic)](https://img.shields.io/travis/frictionlessdata/testsuite-basic/python.svg?label=Python%20(basic))](https://travis-ci.org/frictionlessdata/testsuite-basic/branches)
+[![Python (extended)](https://img.shields.io/travis/frictionlessdata/testsuite-extended/master.svg?label=Python%20(extended))](https://travis-ci.org/frictionlessdata/testsuite-basic)
+[![JavaScript](https://img.shields.io/travis/frictionlessdata/testsuite-basic/javascript.svg?label=JavaScript)](https://travis-ci.org/frictionlessdata/testsuite-basic/branches)
+[![Ruby](https://img.shields.io/travis/frictionlessdata/testsuite-basic/ruby.svg?label=Ruby)](https://travis-ci.org/frictionlessdata/testsuite-basic/branches)
 
-Name | Python | Javascript | Ruby
-----------| ------ | ---------- | ----
-**`testsuite-basic`** | [![Python](https://img.shields.io/travis/frictionlessdata/testsuite-basic/python.svg?label=Python)](https://travis-ci.org/frictionlessdata/testsuite-basic/branches) | [![JavaScript](https://img.shields.io/travis/frictionlessdata/testsuite-basic/javascript.svg?label=JavaScript)](https://travis-ci.org/frictionlessdata/testsuite-basic/branches) | [![Ruby](https://img.shields.io/travis/frictionlessdata/testsuite-basic/ruby.svg?label=Ruby)](https://travis-ci.org/frictionlessdata/testsuite-basic/branches)
-**`testsuite-extended`** | [![Python](https://img.shields.io/travis/frictionlessdata/testsuite-extended/master.svg?label=Python)](https://travis-ci.org/frictionlessdata/testsuite-extended)
+A status page for the core FrictionlessData software. See the test suites status above and all the packages informations below.
 
 ## Packages
 
