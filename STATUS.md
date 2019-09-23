@@ -5,11 +5,11 @@
 [![JavaScript](https://img.shields.io/travis/frictionlessdata/testsuite-basic/javascript.svg?label=JavaScript)](https://travis-ci.org/frictionlessdata/testsuite-basic/branches)
 [![Ruby](https://img.shields.io/travis/frictionlessdata/testsuite-basic/ruby.svg?label=Ruby)](https://travis-ci.org/frictionlessdata/testsuite-basic/branches)
 
-A status page for the core FrictionlessData software. See the test suites status above and all the packages informations below.
+Status of the core FrictionlessData software. See the test suites status above and packages informations below.
 
 ## Packages
 
-Name | Build | Coverage | Package | Codebase | Chat
+Name | Build | Coverage | Registry | Codebase | Chat
 ------- | ----- | -------- | ------- | -------- | ---
 **Python** |
 **`tabulator`** | [![Travis](https://img.shields.io/travis/frictionlessdata/tabulator-py/master.svg)](https://travis-ci.org/frictionlessdata/tabulator-py) | [![Coveralls](http://img.shields.io/coveralls/frictionlessdata/tabulator-py.svg?branch=master)](https://coveralls.io/r/frictionlessdata/tabulator-py?branch=master) | [![PyPi](https://img.shields.io/pypi/v/tabulator.svg)](https://pypi.python.org/pypi/tabulator) | [![Github](https://img.shields.io/badge/github-master-brightgreen)](https://github.com/frictionlessdata/tabulator-py) | [![Gitter](https://img.shields.io/gitter/room/frictionlessdata/chat.svg)](https://gitter.im/frictionlessdata/chat)
