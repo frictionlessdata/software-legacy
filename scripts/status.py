@@ -10,6 +10,8 @@ platforms = [
     'java',
     'go',
     'julia',
+    'clojure',
+    'r',
 ]
 
 # Packages
