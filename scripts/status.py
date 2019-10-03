@@ -6,6 +6,7 @@ platforms = [
     'python',
     'javascript',
     'ruby',
+    'php',
     'java',
 ]
 
@@ -32,6 +33,10 @@ packages = {
     'ruby': [
         {'name': 'tableschema', 'repo': 'tableschema-rb'},
         {'name': 'datapackage', 'repo': 'datapackage-rb'},
+    ],
+    'php': [
+        {'name': 'tableschema', 'repo': 'tableschema-php'},
+        {'name': 'datapackage', 'repo': 'datapackage-php'},
     ],
     'java': [
         {'name': 'tableschema', 'repo': 'tableschema-java'},

@@ -1,7 +1,7 @@
 # Status
 
-[![Python (basic)](https://img.shields.io/travis/frictionlessdata/testsuite-basic/python.svg?label=Python%20(basic))](https://travis-ci.org/frictionlessdata/testsuite-basic/branches)
 [![Python (extended)](https://img.shields.io/travis/frictionlessdata/testsuite-extended/master.svg?label=Python%20(extended))](https://travis-ci.org/frictionlessdata/testsuite-basic)
+[![Python (basic)](https://img.shields.io/travis/frictionlessdata/testsuite-basic/python.svg?label=Python%20(basic))](https://travis-ci.org/frictionlessdata/testsuite-basic/branches)
 [![JavaScript](https://img.shields.io/travis/frictionlessdata/testsuite-basic/javascript.svg?label=JavaScript)](https://travis-ci.org/frictionlessdata/testsuite-basic/branches)
 [![Ruby](https://img.shields.io/travis/frictionlessdata/testsuite-basic/ruby.svg?label=Ruby)](https://travis-ci.org/frictionlessdata/testsuite-basic/branches)
 
@@ -16,6 +16,8 @@ Status of the core FrictionlessData software. See the test suites status above a
   [![NPM](https://img.shields.io/npm/v/{{ package.name }}.svg)](https://www.npmjs.com/package/{{ package.name }})
 {%- elif platform == 'ruby' -%}
   [![Gem](http://img.shields.io/gem/v/{{ package.name }}.svg)](https://rubygems.org/gems/{{ package.name }})
+{%- elif platform == 'php' -%}
+  [![Packagist](https://img.shields.io/packagist/v/frictionlessdata/{{ package.name }}.svg)](https://packagist.org/packages/frictionlessdata/{{ package.name }})
 {%- endif -%}
 {% endmacro %}
 
