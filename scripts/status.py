@@ -33,6 +33,8 @@ packages = {
         {'name': 'tableschema-ui', 'repo': 'tableschema-ui'},
         {'name': 'datapackage', 'repo': 'datapackage-js'},
         {'name': 'datapackage-ui', 'repo': 'datapackage-ui'},
+        {'name': 'goodtables', 'repo': 'goodtables-js'},
+        {'name': 'goodtables-ui', 'repo': 'goodtables-ui'},
     ],
     'ruby': [
         {'name': 'tableschema', 'repo': 'tableschema-rb'},
