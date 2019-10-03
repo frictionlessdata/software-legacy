@@ -5,6 +5,7 @@ from jinja2 import Template
 platforms = [
     'python',
     'javascript',
+    'ruby',
 ]
 
 # Packages
@@ -26,6 +27,10 @@ packages = {
         {'name': 'tableschema-ui', 'repo': 'tableschema-ui'},
         {'name': 'datapackage', 'repo': 'datapackage-js'},
         {'name': 'datapackage-ui', 'repo': 'datapackage-ui'},
+    ],
+    'ruby': [
+        {'name': 'tableschema', 'repo': 'tableschema-rb'},
+        {'name': 'datapackage', 'repo': 'datapackage-rb'},
     ],
 }
 

@@ -9,11 +9,21 @@ Status of the core FrictionlessData software. See the test suites status above a
 
 ## Packages
 
+{% macro registry(platform, package) %}
+{%- if platform == 'python' -%}
+  [![PyPi](https://img.shields.io/pypi/v/{{ package.name }}.svg)](https://pypi.python.org/pypi/{{ package.name }})
+{%- elif platform == 'javascript' -%}
+  [![NPM](https://img.shields.io/npm/v/{{ package.name }}.svg)](https://www.npmjs.com/package/{{ package.name }})
+{%- elif platform == 'ruby' -%}
+  [![Gem](http://img.shields.io/gem/v/{{ package.name }}.svg)](https://rubygems.org/gems/{{ package.name }})
+{%- endif -%}
+{% endmacro %}
+
 Name | Build | Coverage | Registry | Codebase | Chat
 ------- | ----- | -------- | ------- | -------- | ---
 {% for platform in platforms -%}
 **{{ platform|capitalize }}** |
 {% for package in packages[platform] -%}
-**`{{ package.name }}`** | [![Travis](https://img.shields.io/travis/frictionlessdata/{{ package.repo }}/master.svg)](https://travis-ci.org/frictionlessdata/{{ package.repo }}) | [![Coveralls](http://img.shields.io/coveralls/frictionlessdata/{{ package.repo }}.svg?branch=master)](https://coveralls.io/r/frictionlessdata/{{ package.repo }}?branch=master) | {% if platform == 'python' %}[![PyPi](https://img.shields.io/pypi/v/{{ package.name }}.svg)](https://pypi.python.org/pypi/{{ package.name }}){% else %}[![NPM](https://img.shields.io/npm/v/{{ package.name }}.svg)](https://www.npmjs.com/package/{{ package.name }}){% endif %} | [![Github](https://img.shields.io/badge/github-master-brightgreen)](https://github.com/frictionlessdata/{{ package.repo }}) | [![Gitter](https://img.shields.io/gitter/room/frictionlessdata/chat.svg)](https://gitter.im/frictionlessdata/chat)
+**`{{ package.name }}`** | [![Travis](https://img.shields.io/travis/frictionlessdata/{{ package.repo }}/master.svg)](https://travis-ci.org/frictionlessdata/{{ package.repo }}) | [![Coveralls](http://img.shields.io/coveralls/frictionlessdata/{{ package.repo }}.svg?branch=master)](https://coveralls.io/r/frictionlessdata/{{ package.repo }}?branch=master) | {{ registry(platform, package) }} | [![Github](https://img.shields.io/badge/github-master-brightgreen)](https://github.com/frictionlessdata/{{ package.repo }}) | [![Gitter](https://img.shields.io/gitter/room/frictionlessdata/chat.svg)](https://gitter.im/frictionlessdata/chat)
 {% endfor -%}
 {% endfor -%}
