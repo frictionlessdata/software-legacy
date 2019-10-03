@@ -59,8 +59,8 @@ packages = {
         {'name': 'datapackage', 'repo': 'datapackage-clj'},
     ],
     'r': [
-        {'name': 'tableschema', 'repo': 'tableschema-r'},
-        {'name': 'datapackage', 'repo': 'datapackage-r'},
+        {'name': 'tableschema.r', 'repo': 'tableschema-r'},
+        {'name': 'datapackage.r', 'repo': 'datapackage-r'},
     ],
 }
 

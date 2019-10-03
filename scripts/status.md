@@ -18,6 +18,8 @@ Status of the core FrictionlessData software. See the test suites status above a
   [![Gem](http://img.shields.io/gem/v/{{ package.name }}.svg)](https://rubygems.org/gems/{{ package.name }})
 {%- elif platform == 'php' -%}
   [![Packagist](https://img.shields.io/packagist/v/frictionlessdata/{{ package.name }}.svg)](https://packagist.org/packages/frictionlessdata/{{ package.name }})
+{%- elif platform == 'r' -%}
+  [![Packagist](https://img.shields.io/cran/v/{{ package.name }}.svg)](https://cran.rstudio.com/web/packages/{{ package.name }}/index.html)
 {%- endif -%}
 {% endmacro %}
 
