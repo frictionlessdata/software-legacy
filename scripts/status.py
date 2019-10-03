@@ -47,8 +47,8 @@ packages = {
         {'name': 'datapackage', 'repo': 'datapackage-java'},
     ],
     'go': [
-        {'name': 'tableschema', 'repo': 'tableschema-go'},
-        {'name': 'datapackage', 'repo': 'datapackage-go'},
+        {'name': 'tableschema-go', 'repo': 'tableschema-go'},
+        {'name': 'datapackage-go', 'repo': 'datapackage-go'},
     ],
     'julia': [
         {'name': 'tableschema', 'repo': 'TableSchema.jl'},
