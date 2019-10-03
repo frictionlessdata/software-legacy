@@ -52,6 +52,14 @@ packages = {
         {'name': 'tableschema', 'repo': 'tableschema.jl'},
         {'name': 'datapackage', 'repo': 'datapackage.jl'},
     ],
+    'clojure': [
+        {'name': 'tableschema', 'repo': 'tableschema-clj'},
+        {'name': 'datapackage', 'repo': 'datapackage-clj'},
+    ],
+    'r': [
+        {'name': 'tableschema', 'repo': 'tableschema-r'},
+        {'name': 'datapackage', 'repo': 'datapackage-r'},
+    ],
 }
 
 # Render
