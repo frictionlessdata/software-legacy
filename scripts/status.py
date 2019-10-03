@@ -8,6 +8,7 @@ platforms = [
     'ruby',
     'php',
     'java',
+    'go',
 ]
 
 # Packages
@@ -41,6 +42,10 @@ packages = {
     'java': [
         {'name': 'tableschema', 'repo': 'tableschema-java'},
         {'name': 'datapackage', 'repo': 'datapackage-java'},
+    ],
+    'go': [
+        {'name': 'tableschema', 'repo': 'tableschema-go'},
+        {'name': 'datapackage', 'repo': 'datapackage-go'},
     ],
 }
 
