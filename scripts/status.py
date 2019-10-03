@@ -9,6 +9,7 @@ platforms = [
     'php',
     'java',
     'go',
+    'julia',
 ]
 
 # Packages
@@ -46,6 +47,10 @@ packages = {
     'go': [
         {'name': 'tableschema', 'repo': 'tableschema-go'},
         {'name': 'datapackage', 'repo': 'datapackage-go'},
+    ],
+    'julia': [
+        {'name': 'tableschema', 'repo': 'tableschema.jl'},
+        {'name': 'datapackage', 'repo': 'datapackage.jl'},
     ],
 }
 
