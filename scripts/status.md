@@ -18,6 +18,8 @@ Status of the core FrictionlessData software. See the test suites status above a
   [![Gem](http://img.shields.io/gem/v/{{ package.name }}.svg)](https://rubygems.org/gems/{{ package.name }})
 {%- elif platform == 'php' -%}
   [![Packagist](https://img.shields.io/packagist/v/frictionlessdata/{{ package.name }}.svg)](https://packagist.org/packages/frictionlessdata/{{ package.name }})
+{%- elif platform == 'java' -%}
+  [![Maven](https://img.shields.io/maven-central/:frictionlessdata/:{{ package.name }}.svg)](https://search.maven.org/search?q=a:{{ package.name }})
 {%- elif platform in ['go', 'julia'] -%}
   [![Github](https://img.shields.io/github/v/release/frictionlessdata/{{ package.name }}?sort=semver&label=github)](https://github.com/frictionlessdata/{{ package.name }}/releases)
 {%- elif platform == 'clojure' -%}
