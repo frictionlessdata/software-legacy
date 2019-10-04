@@ -53,8 +53,8 @@ packages = {
         {'name': 'datapackage-go', 'repo': 'datapackage-go'},
     ],
     'julia': [
-        {'name': 'tableschema', 'repo': 'TableSchema.jl'},
-        {'name': 'datapackage', 'repo': 'DataPackage.jl'},
+        {'name': 'TableSchema.jl', 'repo': 'TableSchema.jl'},
+        {'name': 'DataPackage.jl', 'repo': 'DataPackage.jl'},
     ],
     'clojure': [
         {'name': 'tableschema', 'repo': 'tableschema-clj'},
