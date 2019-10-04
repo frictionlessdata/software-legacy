@@ -19,9 +19,11 @@ Status of the core FrictionlessData software. See the test suites status above a
 {%- elif platform == 'php' -%}
   [![Packagist](https://img.shields.io/packagist/v/frictionlessdata/{{ package.name }}.svg)](https://packagist.org/packages/frictionlessdata/{{ package.name }})
 {%- elif platform == 'go' -%}
-  [![Packagist](https://img.shields.io/github/v/release/frictionlessdata/{{ package.name }}?sort=semver)](https://github.com/frictionlessdata/{{ package.name }}/releases)
+  [![Github](https://img.shields.io/github/v/release/frictionlessdata/{{ package.name }}?sort=semver)](https://github.com/frictionlessdata/{{ package.name }}/releases)
+{%- elif platform == 'julia' -%}
+  [![Github](https://img.shields.io/github/v/release/frictionlessdata/{{ package.name }}?sort=semver)](https://github.com/frictionlessdata/{{ package.name }}/releases)
 {%- elif platform == 'r' -%}
-  [![Packagist](https://img.shields.io/cran/v/{{ package.name }}.svg)](https://cran.rstudio.com/web/packages/{{ package.name }}/index.html)
+  [![CRAN](https://img.shields.io/cran/v/{{ package.name }}.svg)](https://cran.rstudio.com/web/packages/{{ package.name }}/index.html)
 {%- endif -%}
 {% endmacro %}
 
