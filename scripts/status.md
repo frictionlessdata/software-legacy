@@ -20,6 +20,8 @@ Status of the core FrictionlessData software. See the test suites status above a
   [![Packagist](https://img.shields.io/packagist/v/frictionlessdata/{{ package.name }}.svg)](https://packagist.org/packages/frictionlessdata/{{ package.name }})
 {%- elif platform in ['go', 'julia'] -%}
   [![Github](https://img.shields.io/github/v/release/frictionlessdata/{{ package.name }}?sort=semver&label=github)](https://github.com/frictionlessdata/{{ package.name }}/releases)
+{%- elif platform == 'clojure' -%}
+  [![Clojars](https://img.shields.io/clojars/v/{{ package.name }}.svg)](https://clojars.org/{{ package.name }})
 {%- elif platform == 'r' -%}
   [![CRAN](https://img.shields.io/cran/v/{{ package.name }}.svg)](https://cran.rstudio.com/web/packages/{{ package.name }}/index.html)
 {%- endif -%}
