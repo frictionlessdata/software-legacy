@@ -21,6 +21,7 @@ packages = {
         {'name': 'tabulator', 'repo': 'tabulator-py'},
         {'name': 'tableschema', 'repo': 'tableschema-py'},
         {'name': 'tableschema-bigquery', 'repo': 'tableschema-bigquery-py'},
+        {'name': 'tableschema-ckan-datastore', 'repo': 'tableschema-ckan-datastore-py'},
         {'name': 'tableschema-elasticsearch', 'repo': 'tableschema-elasticsearch-py'},
         {'name': 'tableschema-pandas', 'repo': 'tableschema-pandas-py'},
         {'name': 'tableschema-sql', 'repo': 'tableschema-sql-py'},
