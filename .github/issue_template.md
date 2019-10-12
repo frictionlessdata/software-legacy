@@ -1,6 +1,6 @@
 ---
-assignees:
-  - roll
+assignees: roll
+
 ---
 
 # Overview
