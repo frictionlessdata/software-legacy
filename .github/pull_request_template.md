@@ -1,7 +1,6 @@
 ---
-title: title
-labels: bug
-assignees: roll
+assignees:
+  - roll
 ---
 # Overview
 
