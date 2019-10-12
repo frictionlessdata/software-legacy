@@ -1,5 +1,5 @@
 ---
-name: General issue template
+name: General issue
 about: Create an issue regarding your idea or problem
 assignees: roll
 ---

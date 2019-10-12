@@ -1,5 +1,5 @@
 ---
-name: General pull request template
+name: General pull request
 about: Create a pull request with your improvements
 assignees: roll
 ---
