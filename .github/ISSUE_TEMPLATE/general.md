@@ -1,8 +1,6 @@
 ---
-name: Custom issue template
-about: Describe this issue template's purpose here.
-title: ''
-labels: ''
+name: General issue template
+about: Create an issue regarding your idea or problem
 assignees: roll
 ---
 

@@ -1,5 +1,7 @@
 ---
-assignees: roll, amercader
+name: General pull request template
+about: Create a pull request with your improvements
+assignees: roll
 ---
 
 # Overview
