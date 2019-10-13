@@ -12,3 +12,6 @@ readme:
 
 status:
 	python scripts/status.py > STATUS.md
+
+teams:
+	python scripts/teams.py > TEAMS.md

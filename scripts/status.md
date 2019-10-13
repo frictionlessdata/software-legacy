@@ -29,11 +29,11 @@ Status of the core FrictionlessData software. See the test suites status above a
 {%- endif -%}
 {% endmacro %}
 
-Name  | Build | Coverage | Registry | Maintainer
------ | ----- | -------- | -------- | ----------
-{% for platform in platforms -%}
+Name  | Build | Coverage | Registry
+----- | ----- | -------- | --------
+{% for platform, packages in status.items() -%}
 **{{ platform|capitalize }}** |
-{% for package in packages[platform] -%}
-**<a href="https://github.com/frictionlessdata/{{ package.repo }}">`{{ package.name }}`</a>** | [![Travis](https://img.shields.io/travis/frictionlessdata/{{ package.repo }}/master.svg)](https://travis-ci.org/frictionlessdata/{{ package.repo }}) | [![Coveralls](http://img.shields.io/coveralls/frictionlessdata/{{ package.repo }}.svg?branch=master)](https://coveralls.io/r/frictionlessdata/{{ package.repo }}?branch=master) | {{ registry(platform, package) }} | [![Github](https://img.shields.io/badge/github-{{ maintainers[package.repo] }}-blue)](https://github.com/{{  maintainers[package.repo] }})
+{% for package in packages -%}
+**<a href="https://github.com/frictionlessdata/{{ package.repo }}">`{{ package.name }}`</a>** | [![Travis](https://img.shields.io/travis/frictionlessdata/{{ package.repo }}/master.svg)](https://travis-ci.org/frictionlessdata/{{ package.repo }}) | [![Coveralls](http://img.shields.io/coveralls/frictionlessdata/{{ package.repo }}.svg?branch=master)](https://coveralls.io/r/frictionlessdata/{{ package.repo }}?branch=master) | {{ registry(platform, package) }}
 {% endfor -%}
 {% endfor -%}

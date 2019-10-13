@@ -1,0 +1,129 @@
+project:
+- project
+- website
+- fellows
+- toolfund
+- profiles
+- examples
+- notebooks
+- pilot-bcodmo
+- pilot-catalyst
+
+specifications:
+- specs
+
+software-core/tech-lead:
+- software
+- testsuite-data
+- testsuite-basic
+- testsuite-extended
+
+software-core/python:
+- tabulator-py
+- tableschema-py
+- tableschema-bigquery-py
+- tableschema-ckan-datastore-py
+- tableschema-elasticsearch-py
+- tableschema-pandas-py
+- tableschema-sql-py
+- tableschema-spss-py
+- datapackage-py
+- goodtables-py
+
+software-core/javascript:
+- tableschema-js
+- tableschema-ui
+- datapackage-js
+- datapackage-ui
+- goodtables-js
+- goodtables-ui
+
+software-core/ruby:
+- tableschema-rb
+- datapackage-rb
+
+software-core/php:
+- tableschema-php
+- datapackage-php
+
+software-core/java:
+- tableschema-java
+- datapackage-java
+
+software-core/go:
+- tableschema-go
+- datapackage-go
+
+software-core/julia:
+- TableSchema.jl
+- DataPackage.jl
+
+software-core/clojure:
+- tableschema-clj
+- datapackage-clj
+
+software-core/r:
+- tableschema-r
+- datapackage-r
+
+software-broad/goodtables.io:
+- goodtables.io
+- goodtables.io-example
+
+software-broad/ckan-integration:
+- ckanext-wprdcpilot
+- ckanext-validation
+- ckanext-datapackager
+- ckan-datapackage-tools
+
+software-broad/data-quality:
+- data-quality-spec
+- data-quality-cli
+- data-quality-dashboard
+- data-quality-databases
+
+software-broad/datapackage-pipelines:
+- datapackage-pipelines
+- datapackage-pipelines-aws
+- datapackage-pipelines-github
+- datapackage-pipelines-sourcespec-registry
+- datapackage-pipelines-elasticsearch
+- datapackage-pipelines-goodtables
+- datapackage-pipelines-ui-client
+- datapackage-pipelines-ui-server
+- datapackage-pipelines-ckan
+- datapackage-pipelines-spss
+- dataflows-aws
+
+software-broad/datapackage-render:
+- datapackage-render-js
+
+software-broad/datapackage-googlesheets:
+- googlesheets-datapackage-tools
+
+software-broad/datapackage-darwin-core:
+- FrictionlessDarwinCore
+
+software-broad/delimiter:
+- delimiter
+
+---
+
+archived:
+- dpm-js
+- schemas
+- datapkg-r
+- goodtables-web
+- tableschema-sql-js
+- tableschema-datashape
+- tableschema-openrefine-py
+- tableschema-models-js
+- example-continuous-data-integration
+- pilot-ukds
+- pilot-elife
+- pilot-pnnl
+- pilot-pnnl-user-study
+- pilot-causanatura
+- pilot-wprdc
+- pilot-dm4t
+- pilot-open-archaeology
