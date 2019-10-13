@@ -14,6 +14,7 @@ Name  |  Maintainer
 **<a href="https://github.com/frictionlessdata/profiles">`profiles`</a>** | [![Github](https://img.shields.io/badge/github-lwinfree-brightgreen)](https://github.com/lwinfree)
 **<a href="https://github.com/frictionlessdata/examples">`examples`</a>** | [![Github](https://img.shields.io/badge/github-lwinfree-brightgreen)](https://github.com/lwinfree)
 **<a href="https://github.com/frictionlessdata/notebooks">`notebooks`</a>** | [![Github](https://img.shields.io/badge/github-lwinfree-brightgreen)](https://github.com/lwinfree)
+**<a href="https://github.com/frictionlessdata/documentation">`documentation`</a>** | [![Github](https://img.shields.io/badge/github-roll-brightgreen)](https://github.com/roll)
 **<a href="https://github.com/frictionlessdata/pilot-bcodmo">`pilot-bcodmo`</a>** | [![Github](https://img.shields.io/badge/github-roll-brightgreen)](https://github.com/roll)
 **<a href="https://github.com/frictionlessdata/pilot-catalyst">`pilot-catalyst`</a>** | [![Github](https://img.shields.io/badge/github-roll-brightgreen)](https://github.com/roll)
 **<a href="https://github.com/orgs/frictionlessdata/teams/specifications">specifications</a>** |

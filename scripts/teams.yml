@@ -6,6 +6,7 @@ project:
 - profiles
 - examples
 - notebooks
+- documentation
 - pilot-bcodmo
 - pilot-catalyst
 
