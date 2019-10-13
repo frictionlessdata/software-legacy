@@ -14,6 +14,9 @@ readme:
 	md_toc -p README.md github --header-levels 3
 	sed -i '/(#frictionless-data-implementations)/,+1d' README.md
 
+repos:
+	python scripts/repos.py
+
 templates:
 	sed -i -E "s/@(\w*)/@$(MAINTAINER)/" .github/issue_template.md
 	sed -i -E "s/@(\w*)/@$(MAINTAINER)/" .github/pull_request_template.md

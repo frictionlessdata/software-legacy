@@ -53,7 +53,7 @@ Name  |  Maintainer
 **<a href="https://github.com/frictionlessdata/datapackage-java">`datapackage-java`</a>** | [![Github](https://img.shields.io/badge/github-georgeslabreche-brightgreen)](https://github.com/georgeslabreche)
 **software-core/go** | [![Github](https://img.shields.io/badge/github-go-blue)](https://github.com/orgs/frictionlessdata/teams/go)
 **<a href="https://github.com/frictionlessdata/tableschema-go">`tableschema-go`</a>** | [![Github](https://img.shields.io/badge/github-danielfireman-brightgreen)](https://github.com/danielfireman)
-**<a href="https://github.com/frictionlessdata/datapackage-go">`datapackage-go`</a>** | [![Github](https://img.shields.io/badge/github-danielfireman-brightgreen)](https://github.com/danielfireman)
+**<a href="https://github.com/frictionlessdata/datapackage-go">`datapackage-go`</a>** | [![Github](https://img.shields.io/badge/github-loleg-brightgreen)](https://github.com/loleg)
 **software-core/julia** | [![Github](https://img.shields.io/badge/github-julia-blue)](https://github.com/orgs/frictionlessdata/teams/julia)
 **<a href="https://github.com/frictionlessdata/TableSchema.jl">`TableSchema.jl`</a>** | [![Github](https://img.shields.io/badge/github-loleg-brightgreen)](https://github.com/loleg)
 **<a href="https://github.com/frictionlessdata/DataPackage.jl">`DataPackage.jl`</a>** | [![Github](https://img.shields.io/badge/github-loleg-brightgreen)](https://github.com/loleg)

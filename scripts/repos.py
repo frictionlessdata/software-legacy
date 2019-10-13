@@ -25,25 +25,35 @@ def get_repos():
 
 def get_maintainer(repo):
     time.sleep(0.1)
-    url = 'https://raw.githubusercontent.com/%s/master/.github/issue_template.md' % repo['full_name']
-    match = re.findall(r'\@(\w*)', requests.get(url).text)
-    maintainer = match[0] if match else None
-    # TODO: rebase on the in-repo style
+    url = 'https://raw.githubusercontent.com/%s/master/MAINTAINER.md' % repo['full_name']
+    res = requests.get(url)
+    maintainer = res.text.strip() if res.status_code == 200 else None
     if not maintainer:
+
+        # specifications
         if repo['name'] == 'specs':
             maintainer = 'rufuspollock'
-        if repo['name'].startswith('datapackage-pipelines'):
+
+        # software-broad/datapackge-pipelines
+        if repo['name'].startswith('datapackage-pipelines') or repo['name'].startswith('dataflows'):
             maintainer = 'akariv'
-        if repo['name'].startswith('dataflows'):
-            maintainer = 'akariv'
+
+        # software-broad/datapackage-render
         if repo['name'] == 'datapackage-render-js':
             maintainer = 'anuveyatsu'
+
+        # software-broad/datapackage-googlesheets
         if repo['name'] == 'googlesheets-datapackage-tools':
             maintainer = 'stephanmax'
+
+        # software-broad/datapackage-darwin-core
         if repo['name'] == 'FrictionlessDarwinCore':
             maintainer = 'andrejjh'
+
+        # software-broad/delimiter
         if repo['name'] == 'delimiter':
             maintainer = 'timwis'
+
     return maintainer
 
 
