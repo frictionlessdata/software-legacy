@@ -19,7 +19,7 @@ Name  |  Maintainer
 **<a href="https://github.com/frictionlessdata/pilot-catalyst">`pilot-catalyst`</a>** | [![Github](https://img.shields.io/badge/github-roll-brightgreen)](https://github.com/roll)
 **specifications** | [![Github](https://img.shields.io/badge/github-specifications-blue)](https://github.com/orgs/frictionlessdata/teams/specifications)
 **<a href="https://github.com/frictionlessdata/specs">`specs`</a>** | [![Github](https://img.shields.io/badge/github-rufuspollock-brightgreen)](https://github.com/rufuspollock)
-**software-core/tech-lead** | [![Github](https://img.shields.io/badge/github-tech--lead-blue)](https://github.com/orgs/frictionlessdata/teams/tech-lead)
+**software** | [![Github](https://img.shields.io/badge/github-software-blue)](https://github.com/orgs/frictionlessdata/teams/software)
 **<a href="https://github.com/frictionlessdata/software">`software`</a>** | [![Github](https://img.shields.io/badge/github-roll-brightgreen)](https://github.com/roll)
 **<a href="https://github.com/frictionlessdata/testsuite-data">`testsuite-data`</a>** | [![Github](https://img.shields.io/badge/github-roll-brightgreen)](https://github.com/roll)
 **<a href="https://github.com/frictionlessdata/testsuite-basic">`testsuite-basic`</a>** | [![Github](https://img.shields.io/badge/github-roll-brightgreen)](https://github.com/roll)
