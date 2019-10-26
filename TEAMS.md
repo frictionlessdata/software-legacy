@@ -4,8 +4,8 @@ List of teams and maintainers for FrictionlessData repositories.
 
 ## Repositories
 
-Name  |  Maintainer
------ |  ----------
+Name  |  Lead
+----- |  -----
 **project** | [![Github](https://img.shields.io/badge/github-project-blue)](https://github.com/orgs/frictionlessdata/teams/project)
 **<a href="https://github.com/frictionlessdata/project">`project`</a>** | [![Github](https://img.shields.io/badge/github-lwinfree-brightgreen)](https://github.com/lwinfree)
 **<a href="https://github.com/frictionlessdata/website">`website`</a>** | [![Github](https://img.shields.io/badge/github-lwinfree-brightgreen)](https://github.com/lwinfree)
