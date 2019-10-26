@@ -1,7 +1,7 @@
 .PHONY: all install readme
 
 
-MAINTAINER := $(shell head -n 1 MAINTAINER.md)
+LEAD := $(shell head -n 1 LEAD.md)
 
 
 all: list
@@ -18,8 +18,8 @@ repos:
 	python scripts/repos.py
 
 templates:
-	sed -i -E "s/@(\w*)/@$(MAINTAINER)/" .github/issue_template.md
-	sed -i -E "s/@(\w*)/@$(MAINTAINER)/" .github/pull_request_template.md
+	sed -i -E "s/@(\w*)/@$(LEAD)/" .github/issue_template.md
+	sed -i -E "s/@(\w*)/@$(LEAD)/" .github/pull_request_template.md
 
 status:
 	python scripts/status.py > STATUS.md
