@@ -3438,7 +3438,7 @@ delimiter:
   url: https://api.github.com/repos/frictionlessdata/delimiter
   watchers: 9
   watchers_count: 9
-documentation:
+docs:
   archive_url: https://api.github.com/repos/frictionlessdata/documentation/{archive_format}{/ref}
   archived: false
   assignees_url: https://api.github.com/repos/frictionlessdata/documentation/assignees{/user}
@@ -3488,7 +3488,7 @@ documentation:
   merges_url: https://api.github.com/repos/frictionlessdata/documentation/merges
   milestones_url: https://api.github.com/repos/frictionlessdata/documentation/milestones{/number}
   mirror_url: null
-  name: documentation
+  name: docs
   node_id: MDEwOlJlcG9zaXRvcnkyMTQ3ODg5OTI=
   notifications_url: https://api.github.com/repos/frictionlessdata/documentation/notifications{?since,all,participating}
   open_issues: 0

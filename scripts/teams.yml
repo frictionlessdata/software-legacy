@@ -6,7 +6,7 @@ project:
 - profiles
 - examples
 - notebooks
-- documentation
+- docs
 - pilot-bcodmo
 - pilot-catalyst
 
